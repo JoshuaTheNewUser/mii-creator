@@ -5,84 +5,208 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Mii Creator</title>
-  <meta name="description" content="Create and customize your own Mii characters.">
+  <meta name="description" content="Create and customize your own Mii.">
 
   <link rel="stylesheet" href="dist/main.css">
 </head>
 
 <body>
+
+  <!-- Top bar -->
   <header class="topbar">
     <div class="brand">
       <strong>Mii Creator</strong>
-      <span>Create your Mii</span>
+      <span>Create your own Mii</span>
     </div>
 
-    <div class="top-actions">
-      <button id="undo">↶</button>
-      <button id="redo">↷</button>
+    <div class="toolbar">
+      <button id="undo" title="Undo">↶</button>
+      <button id="redo" title="Redo">↷</button>
       <button id="randomize">🎲 Random</button>
       <button id="save">💾 Save</button>
     </div>
   </header>
 
-  <main class="app">
+  <!-- Main editor -->
+  <main class="creator">
 
-    <aside class="sidebar">
-      <button class="nav-item active" data-section="appearance">👤 Appearance</button>
-      <button class="nav-item" data-section="body">🧍 Body</button>
-      <button class="nav-item" data-section="accessories">✨ Accessories</button>
-      <button class="nav-item" data-section="colors">🎨 Colors</button>
-      <button class="nav-item" data-section="options">⚙️ Options</button>
-    </aside>
+    <!-- Original-style category bar -->
+    <nav class="categories" aria-label="Mii categories">
+      <button class="category active" data-section="face">Face</button>
+      <button class="category" data-section="hair">Hair</button>
+      <button class="category" data-section="eyes">Eyes</button>
+      <button class="category" data-section="eyebrows">Eyebrows</button>
+      <button class="category" data-section="nose">Nose</button>
+      <button class="category" data-section="mouth">Mouth</button>
+      <button class="category" data-section="facial-hair">Facial Hair</button>
+      <button class="category" data-section="body">Body</button>
+      <button class="category" data-section="clothing">Clothing</button>
+      <button class="category" data-section="accessories">Accessories</button>
+    </nav>
 
-    <section class="workspace">
+    <section class="editor">
 
-      <div class="preview-card">
-        <div class="preview-header">
-          <span>Mii Preview</span>
-          <button id="preview-menu">•••</button>
+      <!-- Left: part selector -->
+      <aside class="parts-panel">
+
+        <div class="panel-header">
+          <h2 id="category-title">Face</h2>
+
+          <input
+            id="part-search"
+            type="search"
+            placeholder="Search parts..."
+            aria-label="Search Mii parts"
+          >
         </div>
 
-        <div id="mii-preview"></div>
+        <div id="parts-list">
+          <!-- Existing generated Mii controls go here -->
+        </div>
 
-        <div class="preview-controls">
-          <button id="rotate">↻ Rotate</button>
-          <button id="reset-camera">⌂ Reset</button>
-          <button id="zoom-in">＋</button>
-          <button id="zoom-out">−</button>
+        <div class="panel-actions">
+          <button id="favorite">☆ Favorite</button>
+          <button id="random-part">🎲 Random</button>
+        </div>
+
+      </aside>
+
+      <!-- Center: Mii preview -->
+      <section class="preview">
+
+        <div class="preview-toolbar">
+          <button id="camera-front">Front</button>
+          <button id="camera-3d">3D</button>
+          <button id="camera-reset">Reset</button>
           <button id="fullscreen">⛶</button>
         </div>
-      </div>
 
-      <section class="editor-card">
-        <div class="editor-header">
-          <h2 id="section-title">Appearance</h2>
-          <input id="search-parts" type="search" placeholder="Search...">
+        <div id="mii-preview">
+          <!-- Mii Creator 3D renderer -->
         </div>
 
-        <div id="editor">
-          <!-- Existing Mii Creator UI -->
+        <div class="preview-controls">
+          <button id="rotate-left">↺</button>
+          <button id="rotate-right">↻</button>
+          <button id="zoom-out">−</button>
+          <button id="zoom-in">＋</button>
         </div>
+
+        <div class="animation-controls">
+          <select id="animation-select">
+            <option value="Wait">Idle</option>
+            <option value="Greeting">Greeting</option>
+            <option value="Happy">Happy</option>
+            <option value="Surprised">Surprised</option>
+          </select>
+
+          <button id="play-animation">▶</button>
+        </div>
+
       </section>
+
+      <!-- Right: options -->
+      <aside class="options-panel">
+
+        <div class="panel-header">
+          <h2>Options</h2>
+        </div>
+
+        <section class="option-group">
+          <h3>Colors</h3>
+
+          <button id="skin-color">Skin Color</button>
+          <button id="hair-color">Hair Color</button>
+          <button id="eye-color">Eye Color</button>
+          <button id="clothing-color">Clothing Color</button>
+        </section>
+
+        <section class="option-group">
+          <h3>Body</h3>
+
+          <label for="body-model">Body Model</label>
+
+          <select id="body-model">
+            <option value="wiiu">Wii U</option>
+            <option value="switch">Switch</option>
+            <option value="miitomo">Miitomo</option>
+            <option value="baby">Baby 👶</option>
+          </select>
+
+          <label for="height">Height</label>
+          <input id="height" type="range" min="0" max="100">
+
+          <label for="build">Build</label>
+          <input id="build" type="range" min="0" max="100">
+        </section>
+
+        <section class="option-group">
+          <h3>Background</h3>
+
+          <button id="background-default">Default</button>
+          <button id="background-transparent">Transparent</button>
+          <button id="background-custom">Custom</button>
+        </section>
+
+      </aside>
 
     </section>
 
   </main>
 
-  <section class="quick-actions">
-    <button id="import">📥 Import</button>
-    <button id="preset">⭐ Presets</button>
-    <button id="share">🔗 Share</button>
-    <button id="export-image">🖼️ Export Image</button>
-    <button id="export-glb">📦 Export GLB</button>
-  </section>
+  <!-- Bottom actions -->
+  <footer class="bottom-bar">
 
-  <div id="toast" role="status"></div>
+    <div class="quick-actions">
+      <button id="import">📥 Import</button>
+      <button id="presets">⭐ Presets</button>
+      <button id="share">🔗 Share</button>
+    </div>
 
-  <footer>
-    <span>Mii Creator</span>
-    <span>THE BABY UPDATE 👶</span>
+    <div class="export-actions">
+      <button id="export-image">🖼️ Export Image</button>
+      <button id="export-glb">📦 Export GLB</button>
+    </div>
+
   </footer>
+
+  <!-- Modals -->
+  <dialog id="preset-dialog">
+    <h2>Mii Presets</h2>
+
+    <div id="preset-list"></div>
+
+    <button id="close-presets">Close</button>
+  </dialog>
+
+  <dialog id="settings-dialog">
+    <h2>Settings</h2>
+
+    <label>
+      Theme
+      <select id="theme">
+        <option value="system">System</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </label>
+
+    <label>
+      <input id="reduced-motion" type="checkbox">
+      Reduce animations
+    </label>
+
+    <button id="close-settings">Close</button>
+  </dialog>
+
+  <!-- Notifications -->
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Loading screen -->
+  <div id="loading-screen">
+    <div class="loader"></div>
+    <span>Loading Mii Creator...</span>
+  </div>
 
   <script>
     const global = {};
@@ -90,5 +214,6 @@
   </script>
 
   <script type="module" src="dist/main.js"></script>
+
 </body>
 </html>
