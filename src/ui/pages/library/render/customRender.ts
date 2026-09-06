@@ -147,6 +147,7 @@ export async function customRender(miiData: Mii) {
     wiiu: 14,
     switch: 5,
     miitomo: 16,
+    baby: 20,
   };
 
   let bodyModelSetting = (await getSetting("bodyModel")) as string;
