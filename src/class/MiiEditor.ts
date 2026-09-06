@@ -164,8 +164,52 @@ export class MiiEditor {
     this.ready = true;
   }
   #setupBase() {
-    this.ui.base = new Html("div").class("ui-base").appendTo("body");
-  }
+  this.ui.base = new Html("div")
+    .class("ui-base", "major-redesign")
+    .appendTo("body");
+
+  const header = new Html("header")
+    .class("editor-header")
+    .appendTo(this.ui.base);
+
+  new Html("div")
+    .class("editor-brand")
+    .append(
+      new Html("strong").text("Mii Creator"),
+      new Html("span").text("Create your own Mii")
+    )
+    .appendTo(header);
+
+  const actions = new Html("div")
+    .class("editor-actions")
+    .appendTo(header);
+
+  new Html("button")
+    .class("editor-action")
+    .attr({ title: "Undo" })
+    .text("↶")
+    .on("click", () => {
+      document.dispatchEvent(new CustomEvent("mii-undo"));
+    })
+    .appendTo(actions);
+
+  new Html("button")
+    .class("editor-action")
+    .attr({ title: "Redo" })
+    .text("↷")
+    .on("click", () => {
+      document.dispatchEvent(new CustomEvent("mii-redo"));
+    })
+    .appendTo(actions);
+
+  new Html("button")
+    .class("editor-action", "random")
+    .text("Random")
+    .on("click", () => {
+      document.dispatchEvent(new CustomEvent("mii-random"));
+    })
+    .appendTo(actions);
+}
   #renderModeText(RM: RenderMode) {
     switch (RM) {
       case RenderMode.Canvas2DRenderer:
