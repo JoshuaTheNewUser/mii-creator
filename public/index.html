@@ -1,47 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mii Creator</title>
-    <meta property="og:title" content="Mii Creator - Web-based Mii editor" />
-    <meta
-      property="og:description"
-      content="Create and share Mii characters online with just a few clicks!"
-    />
-    <meta
-      name="description"
-      content="Create and share Mii characters online with just a few clicks!"
-    />
-    <meta
-      name="keywords"
-      content="Mii, Mii Creator, Nintendo, Pretendo, FFL, Wii U, 3DS, Mii Maker, Web Mii Maker"
-    />
-    <meta property="theme-color" content="#484848" />
-    <meta property="og:site_name" content="mii.nxw.pw" />
-    <meta property="og:image" content="https://mii.nxw.pw/assets/images/preview_dark.png" />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:image" content="https://mii.nxw.pw/assets/images/preview_dark.png" />
-    <style>
-      html,
-      body {
-        background-color: white !important;
-      }
-      @media (prefers-color-scheme: dark) {
-        html,
-        body {
-          background-color: black !important;
-        }
-      }
-    </style>
-    <link rel="stylesheet" href="dist/main.css" />
-  </head>
-  <body>
-    <script>
-      const global = {};
-      const process = { env: { NODE_DEBUG: false } };
-    </script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/spectorjs@0.9.30/dist/spector.bundle.js"></script> -->
-    <script type="module" src="dist/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mii Creator</title>
+  <meta name="description" content="Create and customize your own Mii characters.">
+
+  <link rel="stylesheet" href="dist/main.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <strong>Mii Creator</strong>
+      <span>Create your Mii</span>
+    </div>
+
+    <div class="top-actions">
+      <button id="undo">↶</button>
+      <button id="redo">↷</button>
+      <button id="randomize">🎲 Random</button>
+      <button id="save">💾 Save</button>
+    </div>
+  </header>
+
+  <main class="app">
+
+    <aside class="sidebar">
+      <button class="nav-item active" data-section="appearance">👤 Appearance</button>
+      <button class="nav-item" data-section="body">🧍 Body</button>
+      <button class="nav-item" data-section="accessories">✨ Accessories</button>
+      <button class="nav-item" data-section="colors">🎨 Colors</button>
+      <button class="nav-item" data-section="options">⚙️ Options</button>
+    </aside>
+
+    <section class="workspace">
+
+      <div class="preview-card">
+        <div class="preview-header">
+          <span>Mii Preview</span>
+          <button id="preview-menu">•••</button>
+        </div>
+
+        <div id="mii-preview"></div>
+
+        <div class="preview-controls">
+          <button id="rotate">↻ Rotate</button>
+          <button id="reset-camera">⌂ Reset</button>
+          <button id="zoom-in">＋</button>
+          <button id="zoom-out">−</button>
+          <button id="fullscreen">⛶</button>
+        </div>
+      </div>
+
+      <section class="editor-card">
+        <div class="editor-header">
+          <h2 id="section-title">Appearance</h2>
+          <input id="search-parts" type="search" placeholder="Search...">
+        </div>
+
+        <div id="editor">
+          <!-- Existing Mii Creator UI -->
+        </div>
+      </section>
+
+    </section>
+
+  </main>
+
+  <section class="quick-actions">
+    <button id="import">📥 Import</button>
+    <button id="preset">⭐ Presets</button>
+    <button id="share">🔗 Share</button>
+    <button id="export-image">🖼️ Export Image</button>
+    <button id="export-glb">📦 Export GLB</button>
+  </section>
+
+  <div id="toast" role="status"></div>
+
+  <footer>
+    <span>Mii Creator</span>
+    <span>THE BABY UPDATE 👶</span>
+  </footer>
+
+  <script>
+    const global = {};
+    const process = { env: { NODE_DEBUG: false } };
+  </script>
+
+  <script type="module" src="dist/main.js"></script>
+</body>
 </html>
