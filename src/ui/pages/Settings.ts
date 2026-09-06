@@ -207,6 +207,7 @@ export const settingsInfo: Record<string, any> = {
       { label: "Wii U (default)", value: BodyType.WiiU },
       { label: "Switch", value: BodyType.Switch, disabled: true },
       { label: "Miitomo", value: BodyType.Miitomo },
+      { label: "Baby", value: BodyType.Baby },
     ],
   },
   bodyModelHands: {
