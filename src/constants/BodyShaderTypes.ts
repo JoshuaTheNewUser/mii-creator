@@ -9,12 +9,12 @@ export enum BodyType {
   3DS = "3ds",
   Animals = "animal",
   Beta = "beta",
-  Face Raiders = "faceraiders",
+  FaceRaiders = "faceraiders",
   MAE = "MAE",
-  Personal Trainer Walking = "ptw",
+  PersonalTrainerWalking = "ptw",
   StreetPass = "streetpass",
-  Wii Party = "wiiparty",
-  Wii Play = "wiiplay",
+  WiiParty = "wiiparty",
+  WiiPlay = "wiiplay",
   
 }
 // All body types are supported by backend renderer for now
