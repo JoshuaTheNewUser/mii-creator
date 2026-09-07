@@ -5,7 +5,17 @@ export enum BodyType {
   WiiU = "wiiu",
   Switch = "switch",
   Miitomo = "miitomo",
-  Baby = "baby",
+  LTD = "LTD",
+  3DS = "3ds",
+  Animals = "animal",
+  Beta = "beta",
+  Face Raiders = "faceraiders",
+  MAE = "MAE",
+  Personal Trainer Walking = "ptw",
+  StreetPass = "streetpass",
+  Wii Party = "wiiparty",
+  Wii Play = "wiiplay",
+  
 }
 // All body types are supported by backend renderer for now
 
