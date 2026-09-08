@@ -6,7 +6,6 @@ export enum BodyType {
   Switch = "switch",
   Miitomo = "miitomo",
   LTD = "LTD",
-  3DS = "3ds",
   Animals = "animal",
   Beta = "beta",
   FaceRaiders = "faceraiders",
