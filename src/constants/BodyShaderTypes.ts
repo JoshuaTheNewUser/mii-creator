@@ -8,7 +8,6 @@ export enum BodyType {
   LTD = "LTD",
   Animals = "animal",
   Beta = "beta",
-  FaceRaiders = "faceraiders",
   MAE = "MAE",
   PersonalTrainerWalking = "ptw",
   StreetPass = "streetpass",
