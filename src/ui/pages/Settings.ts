@@ -211,7 +211,6 @@ export const settingsInfo: Record<string, any> = {
       { label: "LTD", value: BodyType.LTD },
       { label: "Animals", value: BodyType.animal },
       { label: "Beta", value: BodyType.beta },
-      { label: "FaceRaiders", value: BodyType.faceraiders },
       { label: "MAE", value: BodyType.MAE },
       { label: "PersonalTrainerWalking", value: BodyType.ptw },
       { label: "StreetPass", value: BodyType.streetpass },
