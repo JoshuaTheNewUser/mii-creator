@@ -147,8 +147,6 @@ export async function customRender(miiData: Mii) {
     wiiu: 14,
     switch: 5,
     miitomo: 16,
-    LTD: 20,
-    MAE: 20,
     animal: 20,
     beta: 20,
     baby: 20,
