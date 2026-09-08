@@ -209,7 +209,6 @@ export const settingsInfo: Record<string, any> = {
       { label: "Miitomo", value: BodyType.Miitomo },
       { label: "Baby", value: BodyType.Baby },
       { label: "LTD", value: BodyType.LTD },
-      { label: "3DS", value: BodyType.3ds },
       { label: "Animals", value: BodyType.animal },
       { label: "Beta", value: BodyType.beta },
       { label: "FaceRaiders", value: BodyType.faceraiders },
