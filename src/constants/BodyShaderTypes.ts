@@ -6,9 +6,7 @@ export enum BodyType {
   Switch = "switch",
   Miitomo = "miitomo",
   Animals = "animal",
-  Beta = "beta",
   PersonalTrainerWalking = "ptw",
-  StreetPass = "streetpass",
   WiiParty = "wiiparty",
   WiiPlay = "wiiplay",
   
