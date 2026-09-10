@@ -207,11 +207,7 @@ export const settingsInfo: Record<string, any> = {
       { label: "Wii U (default)", value: BodyType.WiiU },
       { label: "Switch", value: BodyType.Switch },
       { label: "Miitomo", value: BodyType.Miitomo },
-      { label: "Baby", value: BodyType.Baby },
-      { label: "Animals", value: BodyType.animal },
-      { label: "PersonalTrainerWalking", value: BodyType.ptw },
-      { label: "WiiParty", value: BodyType.wiiparty },
-      { label: "WiiPlay", value: BodyType.wiiplay },
+      { label: "Baby", value: BodyType.Baby }
     ],
   },
   bodyModelHands: {
