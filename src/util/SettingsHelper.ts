@@ -223,6 +223,7 @@ export const settingsInfo: Record<string, SettingsOption> = {
       { label: __("Wii U"), value: BodyType.WiiU },
       { label: __("Switch"), value: BodyType.Switch, disabled: true },
       { label: __("Miitomo"), value: BodyType.Miitomo }
+      { label: __("Baby"), value: BodyType.Baby}
       // { label: __("StreetPass"), value: BodyType.StreetPass, disabled: true },
     ]
   },
