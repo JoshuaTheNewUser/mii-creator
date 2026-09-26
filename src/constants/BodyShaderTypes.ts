@@ -6,6 +6,7 @@ export enum BodyType {
   Switch = "switch",
   Miitomo = "miitomo",
   StreetPass = "streetpass"
+  Baby = "baby"
 }
 // All body types are supported by backend renderer for now
 
